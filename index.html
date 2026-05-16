@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>じゃんけんバトル</title>
+
+    <!-- Faviconをつくった -->
+    <link rel="icon" href="img/favicon.svg">
+
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+
+<body>
+
+    <!-- 画面フラッシュ -->
+    <div id="flash"></div>
+
+    <!-- ライフ表示 (ゲーム開始後に表示) -->
+    <div id="lives-display" style="display:none">
+        <div class="lives-row">
+            <span class="lives-label">CPU</span>
+            <div class="hearts">
+                <span class="heart" id="cpu-heart-1">♥</span>
+                <span class="heart" id="cpu-heart-2">♥</span>
+                <span class="heart" id="cpu-heart-3">♥</span>
+            </div>
+        </div>
+        <div class="lives-row">
+            <span class="lives-label">YOU</span>
+            <div class="hearts">
+                <span class="heart" id="player-heart-1">♥</span>
+                <span class="heart" id="player-heart-2">♥</span>
+                <span class="heart" id="player-heart-3">♥</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper">
+
+
+        <main>
+            <!-- 状態1: START -->
+            <div id="screen-start">
+                <img class="bg" src="img/start.png" alt="">
+                <button id="btn-start">
+                    <span>じゃんけんバトル</span>
+                    <span>START</span>
+                </button>
+            </div>
+
+            <!-- 状態2+3: カウント → 手選択 -->
+            <div id="screen-game" style="display:none">
+
+                <img class="bg" src="img/start.png" alt="">
+                <img id="count-img" src="img/janken.png" alt="" style="display:none">
+
+                <div id="choice-buttons" style="display:none">
+                    <button class="hand-btn" data-hand="guu">
+                        <img src="img/guu.png" alt="グー">
+                    </button>
+                    <button class="hand-btn" data-hand="choki">
+                        <img src="img/choki.png" alt="チョキ">
+                    </button>
+                    <button class="hand-btn" data-hand="paa">
+                        <img src="img/paa.png" alt="パー">
+                    </button>
+                </div>
+            </div>
+
+            <!-- 状態4: 結果 -->
+            <div id="screen-result" style="display:none">
+                <img id="result-bg" src="" alt="">
+                <img id="player-hand-img" src="" alt="">
+                <img id="result-img" src="" alt="">
+                <button id="btn-replay" style="display:none">REPLAY</button>
+            </div>
+
+        </main>
+    </div>
+
+    <footer>Version2.0 ©2026 Nagamix All Rights Reserved.</footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
